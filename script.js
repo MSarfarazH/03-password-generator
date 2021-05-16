@@ -15,10 +15,9 @@ var randomPassArray = [];
 // var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ];
 
 function writePassword() {
-//  var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-// passwordText.value = password;
- generatePassword();
+ var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
 }
 
 function generatePassword() {
@@ -35,7 +34,8 @@ function generatePassword() {
     // console.log(passChar)
     randomPassArray.push(passChar)
   }
-  // console.log(randomPassArray.toString())
+    // console.log(randomPassArray.join(""))
+    return randomPassArray.join("");
 }
 
 
@@ -47,6 +47,7 @@ generateBtn.addEventListener("click", writePassword);
       if (i < 8 || i > 128){
         alert("Password must be longer than 8 and shorter than 128 chars")
   }
+ 
 }
 
 function lowerCase (){
